@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import NavBar from './components/navbar';
+import RotatingCube from './components/rotating-cube';
+
 function App() {
+  const [visibleFace, setVisibleFace] = useState('front');
+
+  // Define content for each face
+  const faceContent = {
+    front: <div>Welcome to My Home Page</div>,
+    back: <div>About Me</div>,
+    left: <div>My Resume</div>,
+    right: <div>My Projects</div>,
+    top: <div>Skills</div>,
+    bottom: <div>Contact Me</div>
+  };
+
+  const handleFaceChange = (face) => {
+    setVisibleFace(face);
+  };
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. Hi2
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <RotatingCube />
     </div>
   );
 }

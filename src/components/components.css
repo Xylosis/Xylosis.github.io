@@ -1,0 +1,99 @@
+/* Centering container for the whole page */
+.cube-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5; /* Optional background color */
+  }
+  
+  /* Scene container */
+  .scene {
+    width: 300px;
+    height: 300px;
+    perspective: 1200px;
+  }
+  
+  /* Cube container */
+  .cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  /* Cube face */
+  .face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+  }
+  
+  /* Position each face of the cube */
+  .front  { transform: rotateY(  0deg) translateZ(150px); }
+  .back   { transform: rotateY(180deg) translateZ(150px); }
+  .left   { transform: rotateY(-90deg) translateZ(150px); }
+  .right  { transform: rotateY( 90deg) translateZ(150px); }
+  .top    { transform: rotateX( 90deg) translateZ(150px); }
+  .bottom { transform: rotateX(-90deg) translateZ(150px); }
+  
+  /* Arrow button styling */
+  .arrow {
+    position: absolute;
+    font-size: 2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+  
+  .arrow:hover {
+    background-color: #555;
+  }
+
+  .arrow-sides {
+    padding: 1rem 0.5rem;
+  }
+
+  .arrow-notsides {
+    padding: 0.25rem 1.5rem;
+  }
+  
+  .arrow-up {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .arrow-down {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .arrow-left {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .arrow-right {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
