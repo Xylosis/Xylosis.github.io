@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import './navbar.css';
 
-const NavBar = () => {
+const NavBar = ({currPage, setCurrPage, setPrevPage}) => {
+
+
 
     return (
       <nav className="navbar">
         <div className="navbar-logo">
-          <a href="/">MySite</a>
+          <a href="#home" onClick={() => {setPrevPage(currPage); setCurrPage("Home");}}>MySite</a>
         </div>
         <ul className="navbar-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          {/*<li><a onClick={() => {setCubeVisible(true)}}>Cube</a></li>*/}
+          <li><a href="#about" onClick={() => {setPrevPage(currPage); setCurrPage("About");}}>About</a></li>
+          <li><a href="#projects" onClick={() => {setPrevPage(currPage); setCurrPage("Projects");}}>Projects</a></li>
+          <li><a href="#resume" onClick={() => {setPrevPage(currPage); setCurrPage("Resume");}}>Resume</a></li>
+          <li><a href="#contact" onClick={() => {setPrevPage(currPage); setCurrPage("Contact");}}>Contact</a></li>
+          <li><a href="#other" onClick={() => {setPrevPage(currPage); setCurrPage("Other");}}>Other</a></li>
         </ul>
       </nav>
     );

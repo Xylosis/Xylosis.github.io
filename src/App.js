@@ -1,30 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import './App.css';
 
 import NavBar from './components/navbar';
 import RotatingCube from './components/rotating-cube';
 
 function App() {
-  const [visibleFace, setVisibleFace] = useState('front');
+  const [cubeVisible, setCubeVisible] = useState(false);
+  const [currPage, setCurrPage] = useState("Home");
+  const [initialEntry, setInitialEntry] = useState(true);
+  const [isFading, setIsFading] = useState(true);
+  const [prevPage, setPrevPage] = useState("Home");
 
-  // Define content for each face
-  const faceContent = {
-    front: <div>Welcome to My Home Page</div>,
-    back: <div>About Me</div>,
-    left: <div>My Resume</div>,
-    right: <div>My Projects</div>,
-    top: <div>Skills</div>,
-    bottom: <div>Contact Me</div>
-  };
 
-  const handleFaceChange = (face) => {
-    setVisibleFace(face);
-  };
-  
+  useEffect( () => {
+    if(initialEntry) {
+      setInitialEntry(false);
+    } else {
+      setIsFading(true);
+      setCubeVisible(true);
+    }
+    
+  }, [currPage])
+
+
   return (
     <div className="App">
-      <NavBar />
-      <RotatingCube />
+      <NavBar currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} />
+      {cubeVisible && <RotatingCube 
+                        currPage={currPage} 
+                        setCurrPage={setCurrPage} 
+                        setCubeVisible={setCubeVisible} 
+                        cubeVisible={cubeVisible}
+                        isFading={isFading}
+                        setIsFading={setIsFading}
+                        prevPage={prevPage}
+                      />}
     </div>
   );
 }
