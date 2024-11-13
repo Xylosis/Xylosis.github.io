@@ -1,5 +1,10 @@
 /* Centering container for the whole page */
   /* Centering container for the whole page */
+body{
+    background-color: #270e0e;
+    color: whitesmoke;
+}
+
   .cube-container {
     position: relative;
     display: flex;
@@ -8,7 +13,7 @@
     justify-content: center;
     width: 100vw;
     height: 90vh;
-    background-color: #f5f5f5; /* Optional background color */
+    background-color: #270e0e; /* Optional background color */
   }
   
   /* Scene container */
@@ -35,7 +40,9 @@
     width: 300px;
     height: 300px;
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 1.5s;
+    color:rgb(58, 52, 52);
+    background-color: rgb(134, 130, 130);
   }
   
   /* Arrow button styling */

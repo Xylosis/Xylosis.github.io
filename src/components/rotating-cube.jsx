@@ -1,45 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './components.css';
 
-function RotatingCube( {currPage, prevCurrPage, setCubeVisible, isFading, setIsFading, prevPage} ) {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
+function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX, setRotateX, rotateY, setRotateY} ) {
 
   const rotateCube = (x, y) => {
     setRotateX(rotateX + x);
     setRotateY(rotateY + y);
   };
-
-  useEffect( () => {
-    switch (prevPage) {
-        case 'Home':
-          setRotateX(0);
-          setRotateY(0);
-          break;
-        case 'About':
-          setRotateX(0);
-          setRotateY(180);
-          break;
-        case 'Resume':
-          setRotateX(0);
-          setRotateY(90);
-          break;
-        case 'Projects':
-          setRotateX(0);
-          setRotateY(-90);
-          break;
-        case 'Contact':
-          setRotateX(-90);
-          setRotateY(0);
-          break;
-        case 'Other':
-          setRotateX(90);
-          setRotateY(0);
-          break;
-        default:
-          break;
-      }
-  }, [])
 
     // Calculate rotation for each face
   const rotateToFace = (face) => {
@@ -81,11 +48,11 @@ function RotatingCube( {currPage, prevCurrPage, setCubeVisible, isFading, setIsF
             setTimeout(() => {
                 setCubeVisible(false); // After fade-out, make cube invisible
               }, 600);
-        }, 5000);
+        }, 3000);
 
         const timeout = setTimeout( () => {
             rotateToFace(currPage)
-        }, 3000);
+        }, 1000);
         
         //setCubeVisible(true);
         setIsFading(true);
@@ -107,12 +74,12 @@ function RotatingCube( {currPage, prevCurrPage, setCubeVisible, isFading, setIsF
           <div className="face top" id="Something">Contact</div>
           <div className="face bottom" id="Other">Other</div>
         </div>
-      {/* Rotation buttons */}
-      <button className="arrow arrow-notsides arrow-up" onClick={() => rotateCube(-90, 0)}>▲</button>
-      <button className="arrow arrow-notsides arrow-down" onClick={() => rotateCube(90, 0)}>▼</button>
-      <button className="arrow arrow-sides arrow-left" onClick={() => rotateCube(0, 90)}>◄</button>
-      <button className="arrow arrow-sides arrow-right" onClick={() => rotateCube(0, -90)}>►</button>
-      {/*<button id="okbutton" onClick={setCubeVisible(false)} disabled={cubeVisible ? false : true}>Select</button>*/}
+      {/* Rotation buttons 
+        <button className="arrow arrow-notsides arrow-up" onClick={() => rotateCube(-90, 0)}>▲</button>
+        <button className="arrow arrow-notsides arrow-down" onClick={() => rotateCube(90, 0)}>▼</button>
+        <button className="arrow arrow-sides arrow-left" onClick={() => rotateCube(0, 90)}>◄</button>
+        <button className="arrow arrow-sides arrow-right" onClick={() => rotateCube(0, -90)}>►</button>
+        */}
       </div>
       {/*
       <div className="face-buttons">
