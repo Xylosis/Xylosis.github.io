@@ -6,21 +6,28 @@ import Navbar from "react-bootstrap/Navbar";
 
 import './navbar.css';
 
-const SiteNavBar = ({currPage, setCurrPage, setPrevPage}) => {
+const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode}) => {
+
+    const styles = {
+      navBarItems : {
+        color: darkMode ? "white" : "#333",
+        transition : "all 0.9s ease"
+      }
+    }
 
     return(
       <div>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand >My Website</Navbar.Brand>
+        <Navbar bg={darkMode ? "dark" : "light"} expand="lg">
+          <Navbar.Brand style={styles.navBarItems}>My Website</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-              <Nav.Link as={NavLink} to={"/home"} onClick={() => {setPrevPage(currPage); setCurrPage("Home");}}>Home</Nav.Link>
-              <Nav.Link as={NavLink} to={"/about"} onClick={() => {setPrevPage(currPage); setCurrPage("About");}}>About</Nav.Link>
-              <Nav.Link as={NavLink} to={"/projects"} onClick={() => {setPrevPage(currPage); setCurrPage("Projects");}}>Projects</Nav.Link>
-              <Nav.Link as={NavLink} to={"/resume"} onClick={() => {setPrevPage(currPage); setCurrPage("Resume");}}>Resume</Nav.Link>
-              <Nav.Link as={NavLink} to={"/contact"} onClick={() => {setPrevPage(currPage); setCurrPage("Contact");}}>Contact</Nav.Link>
-              <Nav.Link as={NavLink} to={"/other"} onClick={() => {setPrevPage(currPage); setCurrPage("Other");}}>Other</Nav.Link>
+              <Nav.Link as={NavLink} to={"/home"} onClick={() => {setPrevPage(currPage); setCurrPage("Home");}} style={styles.navBarItems} className="navbar-links">Home</Nav.Link>
+              <Nav.Link as={NavLink} to={"/about"} onClick={() => {setPrevPage(currPage); setCurrPage("About");}} style={styles.navBarItems}>About</Nav.Link>
+              <Nav.Link as={NavLink} to={"/projects"} onClick={() => {setPrevPage(currPage); setCurrPage("Projects");}} style={styles.navBarItems}>Projects</Nav.Link>
+              <Nav.Link as={NavLink} to={"/resume"} onClick={() => {setPrevPage(currPage); setCurrPage("Resume");}} style={styles.navBarItems}>Resume</Nav.Link>
+              <Nav.Link as={NavLink} to={"/contact"} onClick={() => {setPrevPage(currPage); setCurrPage("Contact");}} style={styles.navBarItems}>Contact</Nav.Link>
+              <Nav.Link as={NavLink} to={"/other"} onClick={() => {setPrevPage(currPage); setCurrPage("Other");}} style={styles.navBarItems}>Other</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

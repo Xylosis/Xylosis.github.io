@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
   transition: background-color 1s ease;
+  transition: all 1s ease;
 }
 
 code {
@@ -14,3 +14,6 @@ code {
     monospace;
 }
 
+.text {
+  transition: color 0.5s ease; /* Smooth transition for text color */
+}

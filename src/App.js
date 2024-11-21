@@ -20,7 +20,7 @@ function App() {
   const [prevPage, setPrevPage] = useState("Home");
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
-
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect( () => {
     if(initialEntry) {
@@ -31,9 +31,19 @@ function App() {
     }
   }, [currPage])
 
+  useEffect( () => {
+    if(darkMode) {
+      document.body.style.backgroundColor = '#333333';
+      document.body.style.color = 'white';
+    } else {
+      document.body.style.backgroundColor = '#dddddd';
+      document.body.style.color = 'black';
+    }
+  }, [darkMode])
+
   return (
     <div className="App">
-      <SiteNavBar currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} />
+      <SiteNavBar currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setDarkMode={setDarkMode}/>
       {cubeVisible && <RotatingCube 
                         currPage={currPage} 
                         setCubeVisible={setCubeVisible}
@@ -44,7 +54,12 @@ function App() {
                         setRotateX={setRotateX}
                         rotateY={rotateY}
                         setRotateY={setRotateY}
+                        darkMode={darkMode}
                       />}
+      <button variant="primary" className={`dark-mode-toggle ${darkMode ? "active" : ""}`} onClick={() => setDarkMode(darkMode ? false : true)}>
+        <span className="icon">{darkMode ? "🌙" : "☀️"}</span>
+      </button>
+
 
         <Routes>
           <Route path='/' element={cubeVisible ? null : <Home />}/>

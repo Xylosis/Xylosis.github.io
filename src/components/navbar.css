@@ -6,6 +6,7 @@
     padding: 1rem 2rem;
     background: #222;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 1s ease;
   }
   
   /* Logo styling */
@@ -50,3 +51,47 @@
     }
   }
   
+  .navbar-text {
+    color:inherit;
+  }
+
+  .dark-mode-toggle {
+    position: fixed; /* Makes the button stay in place during scrolling */
+    bottom: 3rem; /* Distance from the bottom of the screen */
+    right: 3rem; /* Distance from the right of the screen */
+    z-index: 1000; /* Ensures it stays above other content */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 3px 3px 5px #c9c9c9, -3px -3px 5px #ffffff;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .dark-mode-toggle:hover {
+    box-shadow: 5px 5px 8px #c9c9c9, -5px -5px 8px #ffffff;
+    transform: scale(1.1);
+  }
+  
+  .dark-mode-toggle.active {
+    background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+    box-shadow: 3px 3px 5px #141414, -3px -3px 5px #323232;
+    color: #fff;
+  }
+
+  .icon {
+    transition: transform 0.5s ease;
+  }
+
+  .dark-mode-toggle.active .icon {
+    transform: rotate(360deg);
+  }

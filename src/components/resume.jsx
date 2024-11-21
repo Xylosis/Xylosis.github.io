@@ -5,7 +5,7 @@ const Resume = () => {
 
     return(
         <div>
-            <h2>resume.....</h2>
+            <h2 className="text">resume.....</h2>
         </div>
     );
 };

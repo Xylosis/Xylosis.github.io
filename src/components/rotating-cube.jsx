@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './components.css';
 
-function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX, setRotateX, rotateY, setRotateY} ) {
+function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX, setRotateX, rotateY, setRotateY, darkMode} ) {
 
   const rotateCube = (x, y) => {
     setRotateX(rotateX + x);
@@ -48,7 +48,7 @@ function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX
             setTimeout(() => {
                 setCubeVisible(false); // After fade-out, make cube invisible
               }, 600);
-            document.body.style.backgroundColor = "#dddddd";
+            darkMode ? document.body.style.backgroundColor = "#333333" : document.body.style.backgroundColor = "#dddddd";
         }, 3000);
 
         const timeout = setTimeout( () => {

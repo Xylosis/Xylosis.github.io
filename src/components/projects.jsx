@@ -5,7 +5,7 @@ const Projects = () => {
 
     return(
         <div>
-            <h2>all projects!</h2>
+            <h2 className="text">all projects!</h2>
         </div>
     );
 };
