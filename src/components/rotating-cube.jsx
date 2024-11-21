@@ -48,12 +48,14 @@ function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX
             setTimeout(() => {
                 setCubeVisible(false); // After fade-out, make cube invisible
               }, 600);
+            document.body.style.backgroundColor = "#dddddd";
         }, 3000);
 
         const timeout = setTimeout( () => {
             rotateToFace(currPage)
-        }, 1000);
+          }, 1200);
         
+        document.body.style.backgroundColor = "gray";
         //setCubeVisible(true);
         setIsFading(true);
         return () => {clearTimeout(timeout); clearTimeout(timeout2);};
@@ -61,7 +63,7 @@ function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX
     }, [currPage]);
 
   return (
-    <div className="cube-container">
+    <div className="cube-container" >
       <div className={`scene ${isFading ? 'fade-in' : 'fade-out'}`}>
         <div
           className="cube"
