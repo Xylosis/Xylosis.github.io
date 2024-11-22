@@ -31,7 +31,7 @@ function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX
           setRotateX(-90);
           setRotateY(0);
           break;
-        case 'Other':
+        case 'Research':
           setRotateX(90);
           setRotateY(0);
           break;
@@ -74,7 +74,7 @@ function RotatingCube( {currPage, setCubeVisible, isFading, setIsFading, rotateX
           <div className="face left" id="Resume">Resume</div>
           <div className="face right" id="Projects">Projects</div>
           <div className="face top" id="Something">Contact</div>
-          <div className="face bottom" id="Other">Other</div>
+          <div className="face bottom" id="Research">Research</div>
         </div>
       {/* Rotation buttons 
         <button className="arrow arrow-notsides arrow-up" onClick={() => rotateCube(-90, 0)}>▲</button>

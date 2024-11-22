@@ -27,7 +27,7 @@ const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode})
               <Nav.Link as={NavLink} to={"/projects"} onClick={() => {setPrevPage(currPage); setCurrPage("Projects");}} style={styles.navBarItems}>Projects</Nav.Link>
               <Nav.Link as={NavLink} to={"/resume"} onClick={() => {setPrevPage(currPage); setCurrPage("Resume");}} style={styles.navBarItems}>Resume</Nav.Link>
               <Nav.Link as={NavLink} to={"/contact"} onClick={() => {setPrevPage(currPage); setCurrPage("Contact");}} style={styles.navBarItems}>Contact</Nav.Link>
-              <Nav.Link as={NavLink} to={"/other"} onClick={() => {setPrevPage(currPage); setCurrPage("Other");}} style={styles.navBarItems}>Other</Nav.Link>
+              <Nav.Link as={NavLink} to={"/research"} onClick={() => {setPrevPage(currPage); setCurrPage("Research");}} style={styles.navBarItems}>Research</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

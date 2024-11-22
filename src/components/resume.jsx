@@ -5,7 +5,15 @@ const Resume = () => {
 
     return(
         <div>
-            <h2 className="text">resume.....</h2>
+                <div style={{ height: '100vh' }}>
+                    <iframe
+                        src="/Andrew_Resume-40.pdf"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 'none' }}
+                        title="PDF Viewer"
+                    ></iframe>
+                </div>
         </div>
     );
 };

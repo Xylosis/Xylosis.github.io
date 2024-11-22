@@ -1,0 +1,76 @@
+/* Footer Container */
+.footer {
+    position: relative; /* Ensures it's styled properly in the flow */
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* Dark background */
+    color: rgb(51, 51, 51); /* White text color */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow above */
+    transition: all 1s ease;
+  }
+  
+  /* Footer Content Wrapper */
+  .footer-content {
+    max-width: 1200px; /* Constrain content width */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Social Links */
+  .social-links {
+    margin-top: 10px;
+    transition: color 0.5s ease;
+  }
+  
+  .social-links a {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+    margin: 0 10px;
+
+  }
+  
+  .social-links a:hover {
+    transition: color 0.3s ease;
+    color: #00aced; /* Light blue hover color */
+  }
+  
+  /* Stick Footer to Bottom */
+  html, body {
+    height: 100%; /* Ensure the body spans full height */
+    margin: 0;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure the root stretches full height */
+  }
+  
+  .footer {
+    margin-top: auto; /* Push footer to the bottom if content is short */
+  }
+  
+  .footer-dark {
+    background-color: #1f2225 !important;
+    color: whitesmoke;
+    transition: color 0.5s ease;
+  }
+
+  .footer-dark-links:hover {
+    color:#00aced;
+    transition: color 0.3s ease;
+  }
+
+  .footer-dark-links-out {
+    transition: color 0.5s ease;
+  }
+
+  .matchCube {
+    background-color: gray;
+  }

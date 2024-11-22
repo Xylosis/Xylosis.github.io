@@ -10,7 +10,8 @@ import About from './components/about';
 import Contact from './components/contact';
 import Projects from './components/projects';
 import Resume from './components/resume';
-
+import Footer from './components/footer';
+import Research from './components/research';
 
 function App() {
   const [cubeVisible, setCubeVisible] = useState(false);
@@ -68,8 +69,10 @@ function App() {
           <Route path='/resume' element={cubeVisible ? null : <Resume />} />
           <Route path='/projects' element={cubeVisible ? null : <Projects />} />
           <Route path='/contact' element={cubeVisible ? null : <Contact />} />
-          <Route path='/other' element={cubeVisible ? null : <About />} />
+          <Route path='/research' element={cubeVisible ? null : <Research />} />
         </Routes>
+
+        <Footer darkMode={darkMode} cubeVisible={cubeVisible}/>
     </div>
   );
 }
