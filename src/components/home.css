@@ -1,0 +1,215 @@
+  /*HOME PAGE STYLING*/
+  .typing-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+  
+
+  .homepage {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 20%;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+/*
+  #BigContainer {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 20px; 
+    padding: 20px;
+  }
+  
+  #text-container {
+    flex: 2; 
+  }
+  
+  #image-container {
+    flex: 1; 
+    text-align: center; 
+  }
+  
+  #image-container img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+-----------------------------------------------------------------------------------------------
+
+  #BigContainer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+  .text-container {
+    text-align: center; 
+  }
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .text-container p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+*/
+
+/* General Reset */
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f4f4f9; 
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; */
+  } 
+  
+  /* Container Styling */
+  #BigContainer {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    align-items: center; /* Center elements vertically */
+    justify-content: center; /* Center elements horizontally */
+    gap: 20px; /* Reduce space between the image and text containers */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Image Styling */
+  .image-container {
+    flex: 1; /* Allow the image container to take up less space */
+  }
+  
+  .image-container img {
+    max-width: 75%; /* Adjust image size to fit better */
+    max-height: 75%;
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+  
+  /* Text Styling */
+  .text-container {
+    flex: 2; /* Allow the text container to take up more space */
+    text-align: left; /* Align text to the left (optional) */
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards; /* Trigger the animation */
+    gap: 20px; /* Add space between text and button */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px); /* Start slightly below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End in the original position */
+    }
+  }
+  
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .text-container .highlight {
+    color: #ff9800; /* Highlight color for your name */
+  }
+  
+  .text-container .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  
+  .text-container .highlight-secondary {
+    color: #4caf50; /* Highlight color for role */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #BigContainer {
+      flex-direction: column; /* Stack elements vertically */
+    }
+  
+    .image-container img {
+      max-width: 50%; /* Resize image for smaller screens */
+      height: auto;
+    }
+  
+    .text-container {
+      text-align: center; /* Center text for smaller screens */
+    }
+  
+    .text-container h1 {
+      font-size: 2rem;
+    }
+  
+    .text-container .subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .text-container h1,
+  .text-container .subtitle {
+    margin: 1rem 0 0 0; /* Remove any additional margins */
+  }
+
+  .aboutlinkfromhome {
+    align-self: center; /* Align the button to the left */
+    margin-top: 10px; /* Space between subtitle and button */
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: white;
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.5s ease;
+    margin-top: -12rem;
+  }
+  
+  .aboutlinkfromhome:hover {
+    background-color: white; /* Highlight on hover */
+    color: black;
+    transform: translateY(-10px);
+  }
+
+  #BiggerContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 8rem;
+  }
+
+  .dark {
+    color: black;
+    background-color: white;
+  }
+
+  .dark:hover {
+    background-color: rgb(29, 29, 29); /* Highlight on hover */
+    color: white;
+  }
