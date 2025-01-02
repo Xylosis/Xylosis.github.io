@@ -72,7 +72,7 @@ function App() {
           <Route path='/contact' element={cubeVisible ? null : <Contact darkMode={darkMode}/>} />
         </Routes>
 
-        <Footer darkMode={darkMode} cubeVisible={cubeVisible}/>
+        <Footer darkMode={darkMode} cubeVisible={cubeVisible} currPage={currPage}/>
     </div>
   );
 }

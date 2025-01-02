@@ -1,0 +1,14 @@
+.project-container {
+    margin: 3rem 10rem;
+    border-radius: 10px;
+    border: solid black 2px;
+    padding: 1rem;
+    background-color: #aaa;
+    transition: all 1s ease;
+    box-shadow: 2px 2px 2px #000b18de;
+}
+
+.dark-project-container {
+    background-color: #555;
+    transition: all 1s ease;
+}
