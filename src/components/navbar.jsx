@@ -11,7 +11,9 @@ const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode})
     const styles = {
       navBarItems : {
         color: darkMode ? "white" : null,
-        transition : "all 0.9s ease"
+        transition : "all 0.9s ease",
+        paddingLeft : ".75rem",
+        paddingRight: ".75rem",
       }
     }
 
