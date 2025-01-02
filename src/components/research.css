@@ -1,0 +1,12 @@
+.container {
+    max-width: 1000px; /* Set a maximum width for the content */
+    margin-bottom: 4rem;
+}
+
+.header {
+    margin: 4rem 0 2rem;
+}
+
+.researchText {
+    line-height: 2;
+}

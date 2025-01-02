@@ -67,8 +67,8 @@ function App() {
           <Route path='/home' element={cubeVisible ? null : <Home currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setCubeVisible={setCubeVisible}/>}></Route>
           <Route path='/about' element={cubeVisible ? null : <About darkMode={darkMode} currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage}/>} />
           <Route path='/resume' element={cubeVisible ? null : <Resume />} />
-          <Route path='/projects' element={cubeVisible ? null : <Projects />} />
-          <Route path='/research' element={cubeVisible ? null : <Research />} />
+          <Route path='/projects' element={cubeVisible ? null : <Projects darkMode={darkMode}/>} />
+          <Route path='/research' element={cubeVisible ? null : <Research darkMode={darkMode} />} />
           <Route path='/contact' element={cubeVisible ? null : <Contact darkMode={darkMode}/>} />
         </Routes>
 
