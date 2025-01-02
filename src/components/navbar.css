@@ -95,3 +95,14 @@
   .dark-mode-toggle.active .icon {
     transform: rotate(360deg);
   }
+
+  .activePage {
+    background-color: #007bffb7;
+    color: white !important;
+    border-radius: 5px;
+    height: calc(100% + 16px); /* Adjust based on navbar padding */
+    /* margin: -8px 0; Negative margin to counter padding (adjust as needed) */
+    display: flex;
+    align-items: center;
+    transition: backgroundColor 0.6s ease;
+  }
