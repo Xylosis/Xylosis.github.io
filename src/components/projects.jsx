@@ -3,9 +3,9 @@ import './projects.css'
 
 const Projects = ({darkMode}) => {
     const projects = [
-        { title: "Project 1", description: "Description for Project 1", image: "project1.jpg" },
-        { title: "Project 2", description: "Description for Project 2", image: "project2.jpg" },
-        { title: "Project 3", description: "Description for Project 3", image: "project3.jpg" },
+        { title: "Biblical AI", description: "Description for Project 1", image: "project1.jpg" },
+        { title: "Discord Bots", description: "Description for Project 2", image: "project2.jpg" },
+        { title: "NYcrawler App", description: "Description for Project 3", image: "project3.jpg" },
       ];
     
       const [currentIndex, setCurrentIndex] = useState(0);

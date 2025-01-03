@@ -10,3 +10,8 @@
 .researchText {
     line-height: 2;
 }
+
+.main-content {
+    flex: 1; /* Take up all available space */
+    overflow-y: auto; /* Allow scrolling only for the main content */
+  }

@@ -5,7 +5,7 @@ const Research = ({darkMode}) => {
 
 
     return(
-        <div>
+        <div class="main-content">
             <h2 className="text header" style={darkMode ? {color : "white"} : null}>Research</h2>
 
             <div className="container">

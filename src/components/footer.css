@@ -10,6 +10,7 @@
     font-size: 14px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow above */
     transition: all 1s ease;
+    box-sizing: content-box;
   }
   
   /* Footer Content Wrapper */

@@ -8,7 +8,7 @@ function Footer({darkMode, cubeVisible, currPage}) {
     }, [darkMode])
 
   return (
-    <footer className={`footer ${darkMode && !cubeVisible ? 'footer-dark' : ''} ${cubeVisible ? 'matchCube' : ''}`} style={currPage === "Projects" ? {position: "absolute", bottom: "0"} : null}>
+    <footer className={`footer ${darkMode && !cubeVisible ? 'footer-dark' : ''} ${cubeVisible ? 'matchCube' : ''}`} style={darkMode ? {backgroundColor: "#1f2225"} : null}>
       <div className="footer-content">
         <p className={`${darkMode ? 'footer-dark' : 'footer-dark-links-out'}`}>&copy; {new Date().getFullYear()} Andrew Dickman. All Rights Reserved.</p>
         <div className="social-links">
