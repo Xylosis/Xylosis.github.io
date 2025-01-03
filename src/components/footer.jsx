@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
 import "./footer.css";
 
-function Footer({darkMode, cubeVisible, currPage}) {
+function Footer({darkMode, cubeVisible, currPage, submittedForm}) {
 
     useEffect( () => {
         console.log("changing");
     }, [darkMode])
 
+    const styles = {
+      backgroundColor: darkMode ? "#1f2225" : null,
+      position: submittedForm && currPage === "Contact" ? "absolute" : null,
+      bottom: submittedForm && currPage === "Contact" ? 0 : null,
+    }
+
   return (
-    <footer className={`footer ${darkMode && !cubeVisible ? 'footer-dark' : ''} ${cubeVisible ? 'matchCube' : ''}`} style={darkMode ? {backgroundColor: "#1f2225"} : null}>
+    <footer className={`footer ${darkMode && !cubeVisible ? 'footer-dark' : ''} ${cubeVisible ? 'matchCube' : ''}`} style={styles}>
       <div className="footer-content">
         <p className={`${darkMode ? 'footer-dark' : 'footer-dark-links-out'}`}>&copy; {new Date().getFullYear()} Andrew Dickman. All Rights Reserved.</p>
         <div className="social-links">

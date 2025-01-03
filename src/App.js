@@ -22,6 +22,7 @@ function App() {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
+  const [submittedForm, setSubmittedForm] = useState(false);
 
   useEffect( () => {
     if(initialEntry) {
@@ -30,6 +31,7 @@ function App() {
       setIsFading(true);
       setCubeVisible(true);
     }
+    setSubmittedForm(false);
   }, [currPage])
 
   useEffect( () => {
@@ -69,10 +71,10 @@ function App() {
           <Route path='/resume' element={cubeVisible ? null : <Resume />} />
           <Route path='/projects' element={cubeVisible ? null : <Projects darkMode={darkMode}/>} />
           <Route path='/research' element={cubeVisible ? null : <Research darkMode={darkMode} />} />
-          <Route path='/contact' element={cubeVisible ? null : <Contact darkMode={darkMode}/>} />
+          <Route path='/contact' element={cubeVisible ? null : <Contact darkMode={darkMode} setSubmittedForm={setSubmittedForm}/>} />
         </Routes>
 
-        <Footer darkMode={darkMode} cubeVisible={cubeVisible} currPage={currPage}/>
+        <Footer darkMode={darkMode} cubeVisible={cubeVisible} currPage={currPage} submittedForm={submittedForm}/>
     </div>
   );
 }

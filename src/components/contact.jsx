@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import emailjs from 'emailjs-com';
 import "./contact.css";
 
-const Contact = ({darkMode}) => {
+const Contact = ({darkMode, setSubmittedForm}) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -9,6 +10,8 @@ const Contact = ({darkMode}) => {
       });
     
       const [submitted, setSubmitted] = useState(false);
+      const [isSent, setIsSent] = useState(false);
+      const [error, setError] = useState("");
     
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,7 +22,34 @@ const Contact = ({darkMode}) => {
         e.preventDefault();
         // Perform your form submission logic here
         console.log("Form Data Submitted:", formData);
+        const serviceId = "service_7smamjn";
+        const templateId = "template_jglp9k8";
+        const publicKey = "5-33bfhnnJ2fUnOoa";
+
+        emailjs
+        .send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+          },
+          publicKey
+        )
+        .then(
+          (response) => {
+            console.log("Email successfully sent!", response);
+            setIsSent(true);
+            setFormData({ name: "", email: "", message: "" });
+          },
+          (error) => {
+            console.error("Failed to send email.", error);
+            setError("Failed to send email. Please try again.");
+          }
+        );
         setSubmitted(true);
+        setSubmittedForm(true);
       };
     
       return (

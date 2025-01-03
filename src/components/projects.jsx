@@ -1,11 +1,16 @@
 import React, {useState} from "react";
+import img6 from "../imgs/marshmallow-toast-simulator.png"
 import './projects.css'
 
 const Projects = ({darkMode}) => {
     const projects = [
-        { title: "Biblical AI", description: "Description for Project 1", image: "project1.jpg" },
-        { title: "Discord Bots", description: "Description for Project 2", image: "project2.jpg" },
-        { title: "NYcrawler App", description: "Description for Project 3", image: "project3.jpg" },
+        { title: "Biblical AI", description: "Description for Project 1", skills: "", image: "project1.jpg" },
+        { title: "Discord Bots", description: "Description for Project 2", skills: "", image: "project2.jpg" },
+        { title: "NYcrawler App", description: "Description for Project 3", skills: "", image: "project3.jpg" },
+        { title: "Programming Language", description: "Description for Project 4", skills: "", image: "project4.jpg" },
+        { title: "Covey.Town Chess Game", description: "Description for Project 5", skills: "", image: "project5.jpg" },
+        { title: "Marshmallow Toast Simulator", description: "Created during the HackNJIT 2022 Hackathon by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala <br /> -- HackNJIT 2022 Best Camping Themed Hack Winner -- ", skills: "", image: img6 },
+        { title: "Airline Satisfaction Predictor", description: "CS375", skills: "", image: "project3.jpg" },
       ];
     
       const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,6 +47,7 @@ const Projects = ({darkMode}) => {
                 <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null}/>
                 <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
                 <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
+                <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
               </div>
             ))}
           </div>

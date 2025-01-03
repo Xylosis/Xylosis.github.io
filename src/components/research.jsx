@@ -5,7 +5,7 @@ const Research = ({darkMode}) => {
 
 
     return(
-        <div class="main-content">
+        <div className="main-content">
             <h2 className="text header" style={darkMode ? {color : "white"} : null}>Research</h2>
 
             <div className="container">
@@ -28,7 +28,7 @@ const Research = ({darkMode}) => {
                 <br />
                 <p className="text researchText">
                     This research is still in it's infancy, as I still have a ton of more information to learn before I can really get into developing this. So as of right 
-                    now, everything is still within concepts, but hopefully soon, there will be something to show for it.
+                    now, everything is still within concepts, but hopefully soon, there will be something to show for it. As more is done, this page will be updated.
                 </p>
             </div>
         </div>

@@ -66,8 +66,8 @@ html, body {
   }
   
   .project-card img {
-    width: 80%;
-    max-height: 50%;
+    width: 35%;
+    height: 50%;
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -75,6 +75,11 @@ html, body {
     transition: all 0.7s ease;
   }
   
+  .project-card img:hover {
+    width: 50%;
+    height: 75%;
+  }
+
   .project-card h2 {
     font-size: 2rem;
     margin: 10px 0;
