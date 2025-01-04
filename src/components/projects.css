@@ -50,19 +50,17 @@ html, body {
     justify-content: center;
     align-items: center;
     background: #f4f4f4;
-    height: 100%; /* Match the height of the container */
+    height: auto; /* Match the height of the container */
     transition: transform 0.9s ease, background-color 0.9s ease;
     position: relative;
   }
 
   .project-card h1 {
-    position: absolute;
-    top: 20px; /* Adjust to move it closer or further from the top */
-    left: 50%;
-    transform: translateX(-50%); /* Center the h1 horizontally */
     margin: 0;
     font-size: 1.5rem;
     color: #333; /* Default dark text */
+    z-index: 1; /* Ensure it stays on top of the image if necessary */
+    margin-bottom: 1rem;
   }
   
   .project-card img {
@@ -76,8 +74,9 @@ html, body {
   }
   
   .project-card img:hover {
-    width: 50%;
-    height: 75%;
+    width: 45%;
+    height: 70%;
+    margin-bottom: 40px;
   }
 
   .project-card h2 {
