@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9c746d35.css",
+    "main.js": "/static/js/main.36cb320e.js",
+    "static/js/453.b03bc01e.chunk.js": "/static/js/453.b03bc01e.chunk.js",
+    "static/media/fullbodyshot 3.png": "/static/media/fullbodyshot 3.c7287f77ba2ae16612fd.png",
+    "static/media/marshmallow-toast-simulator.png": "/static/media/marshmallow-toast-simulator.52621ffcec38f19d7452.png",
+    "static/media/nyghtcrawler.png": "/static/media/nyghtcrawler.23e09b584daa429226bb.png",
+    "static/media/biblicalai.png": "/static/media/biblicalai.d65ee4ea5d4c97e5d316.png",
+    "static/media/coveytown.png": "/static/media/coveytown.fe9106bd315b079477e5.png",
+    "static/media/cs375airlineprojectpic.png": "/static/media/cs375airlineprojectpic.a82240a80dc0f8573ff9.png",
+    "static/media/oversimplified_tree_pa2.png": "/static/media/oversimplified_tree_pa2.fcc0a39df4708c2da4cd.png",
+    "index.html": "/index.html",
+    "main.9c746d35.css.map": "/static/css/main.9c746d35.css.map",
+    "main.36cb320e.js.map": "/static/js/main.36cb320e.js.map",
+    "453.b03bc01e.chunk.js.map": "/static/js/453.b03bc01e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c746d35.css",
+    "static/js/main.36cb320e.js"
+  ]
+}
