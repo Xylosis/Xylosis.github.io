@@ -27,6 +27,7 @@ function App() {
   useEffect( () => {
     if(initialEntry) {
       setInitialEntry(false);
+      console.log("welcome");
     } else {
       setIsFading(true);
       setCubeVisible(true);
