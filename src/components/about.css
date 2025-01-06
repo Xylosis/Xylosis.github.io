@@ -33,26 +33,19 @@
   }
   
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px); /* Slight slide-up effect */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      overflow-x: auto;
   }
 
-  @keyframes fadeIn2 {
-    from {
-      opacity: 0;
-      transform: translateY(40px); /* Slight slide-up effect */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .sidebar .tab {
+      flex: 1;
+      text-align: center;
+  }
   }
 
   .content h2 {
@@ -85,8 +78,16 @@
     color: black;
     transform: translateY(-10px);
   }
-
-  .dark {
+  
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    margin: 1rem auto; /* Center the content horizontally */
+    max-width: 1000px; /* Set a maximum width for the content */
+  }
+    .dark {
     color: black;
     background-color: white;
   }
@@ -96,11 +97,25 @@
     color: white;
   }
 
-  
-  .content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-    margin: 1rem auto; /* Center the content horizontally */
-    max-width: 1000px; /* Set a maximum width for the content */
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Slight slide-up effect */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn2 {
+    from {
+      opacity: 0;
+      transform: translateY(40px); /* Slight slide-up effect */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }

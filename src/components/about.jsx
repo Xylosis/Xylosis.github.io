@@ -4,6 +4,7 @@ import './about.css'
 
 const About = ({darkMode, currPage, setCurrPage, setPrevPage}) => {
     const [activeTab, setActiveTab] = useState("Professional Life");
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const content = {
         "Professional Life": (<span>Hello again! My name is Andrew Dickman, and I'm a 22 year old recent graduate from New Jersey Institute of Technology, who graduated in December 2024 with <i>magna cum laude</i> honors. I love math and science, so I decided to start off my college career as an electrical engineering student, and studied EE for about two years until I decided it wasn't for me. I still loved the math and science, but realized I much preferred working with software, so at the end of my fourth semester, I switched to Computer Science. This was where I found my love for software development, and software engineering. <br /><br /> Throughout my time in Computer Science, I was able to work as a TA for three classes: CS288 (Intensive Programming in Linux), IT202 (Web Development), and IT302 (Advanced Web Development). EXPAND ON THIS<br /><br /> After finally building up the knowledge and confidence I needed, I was able to get an internship in the summer of 2024 at Johnson & Johnson where I worked as a Data Scientist, primarily focused on Generative AI development and implementation, within their Technical Research & Development center. This experience opened the door to Data Science for me, and showed me how important and diverse of a field it really is. <br /><br /> Because of my love and interest for software engineering, and my growing interest in Data Science, I'm looking for a role in either field to learn more about them professionally. I believe these roles should go hand in hand though, and a position which utilizes aspects of both would be an amazingly strong and interesting position that I hope to work in some day.</span>),
@@ -17,31 +18,72 @@ const About = ({darkMode, currPage, setCurrPage, setPrevPage}) => {
     return(
         <div>
             <div className="about-me-container">
-                <div className="sidebar" style={darkMode ? {backgroundColor: "#222222"} : null}>
+                {/* Toggle button for mobile */}
+                <button
+                    className="toggle-sidebar-button"
+                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    style={{
+                        backgroundColor: darkMode ? "#222222" : "#ffffff",
+                        color: darkMode ? "#ffffff" : "#000000",
+                    }}
+                >
+                    {isSidebarOpen ? "Close Menu" : "Open Menu"}
+                </button>
+
+                {/* Sidebar */}
+                <div
+                    className={`sidebar ${isSidebarOpen ? "open" : "collapsed"}`}
+                    style={darkMode ? { backgroundColor: "#222222" } : null}
+                >
                     {Object.keys(content).map((tab) => (
-                    <div
-                        key={tab}
-                        className={`tab text ${activeTab === tab ? "active" : ""}`}
-                        onClick={() => setActiveTab(tab)}
-                    >
-                        {tab}
-                    </div>
+                        <div
+                            key={tab}
+                            className={`tab text ${activeTab === tab ? "active" : ""}`}
+                            onClick={() => {
+                                setActiveTab(tab);
+                                setIsSidebarOpen(false); // Close sidebar on tab selection (for mobile)
+                            }}
+                        >
+                            {tab}
+                        </div>
                     ))}
                 </div>
+
+                {/* Content */}
                 <div className="content" key={activeTab}>
-                    <h2 className="text" style={darkMode ? {color: "white"} : null}>{activeTab}</h2>
+                    <h2
+                        className="text"
+                        style={darkMode ? { color: "white" } : null}
+                    >
+                        {activeTab}
+                    </h2>
                     <div style={{ whiteSpace: "pre-wrap" }}>
-                        <p className="text" style={darkMode ? {color: "white"} : null}>{content[activeTab]}</p>
+                        <p
+                            className="text"
+                            style={darkMode ? { color: "white" } : null}
+                        >
+                            {content[activeTab]}
+                        </p>
                     </div>
-                    {activeTab === "Technical Projects and Interests" ?  
-                        <NavLink 
-                            as={NavLink} 
-                            to={"/projects"} 
-                            onClick={() => {setPrevPage(currPage); setCurrPage("Projects");}} 
-                            className={`ToProjectButton ${darkMode ? 'dark' : null}`}
-                            style={{ display: "inline-block", marginTop: "4rem" }}
-                            > Check out some of my projects! 
-                        </NavLink>  : null }
+                    {activeTab === "Technical Projects and Interests" ? (
+                        <NavLink
+                            as={NavLink}
+                            to={"/projects"}
+                            onClick={() => {
+                                setPrevPage(currPage);
+                                setCurrPage("Projects");
+                            }}
+                            className={`ToProjectButton ${
+                                darkMode ? "dark" : null
+                            }`}
+                            style={{
+                                display: "inline-block",
+                                marginTop: "4rem",
+                            }}
+                        >
+                            Check out some of my projects!
+                        </NavLink>
+                    ) : null}
                 </div>
             </div>
         </div>
