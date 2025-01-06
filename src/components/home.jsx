@@ -28,37 +28,52 @@ const Home = ({currPage, setCurrPage, setPrevPage, darkMode, setCubeVisible}) =>
                 <img src={img}></img>
             </div>
             <div className="text-container">
-                <ReactTypingEffect
-                    text={[
-                        "Hi, I'm Andrew Dickman...",
-                        "Aspiring Software Engineer / Data Scientist.",
-                    ]}
-                    speed={100}
-                    eraseSpeed={50}
-                    typingDelay={700}
-                    eraseDelay={2000}
-                    cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-                    displayTextRenderer={(text, i) => {
-                        return (
-                            <h1>
+            <ReactTypingEffect
+                text={[
+                    "Hi, I'm Andrew Dickman...",
+                    "Aspiring Software Engineer / Data Scientist.",
+                ]}
+                speed={100}
+                eraseSpeed={50}
+                typingDelay={700}
+                eraseDelay={2000}
+                cursor={" "}
+                displayTextRenderer={(text, i) => {
+                    return (
+                        <h1 style={{ display: 'inline', whiteSpace: 'pre-wrap' }}>
                             {text.split('').map((char, index) => {
                                 // Dynamic color effect
                                 const color =
-                                i === 0
-                                    ? index > 7 && index < 22 ? 'rgb(240, 0, 48)' : null 
-                                    : index > 8 && index < 27
-                                    ? 'rgb(26, 150, 30)' 
-                                    : index > 28 && index < 43 ? 'rgb(76, 76, 231)' : null; 
+                                    i === 0
+                                        ? index > 7 && index < 22
+                                            ? 'rgb(240, 0, 48)'
+                                            : null
+                                        : index > 8 && index < 27
+                                        ? 'rgb(26, 150, 30)'
+                                        : index > 28 && index < 43
+                                        ? 'rgb(76, 76, 231)'
+                                        : null;
                                 return (
-                                <span className="text" key={index} style={{ color: color }}>
-                                    {char}
-                                </span>
+                                    <span className="text" key={index} style={{ color: color }}>
+                                        {char}
+                                    </span>
                                 );
                             })}
-                            </h1>
-                        );
-                    }}
-                />
+                            {/* Render the blinking cursor */}
+                            <span
+                                style={{
+                                    display: 'inline',
+                                    fontWeight: 'bold',
+                                    animation: 'blink 1s step-end infinite',
+                                }}
+                            >
+                                |
+                            </span>
+                        </h1>
+                    );
+                }}
+            />
+
                 <p className={"text subtitle"}>I'm a recent graduate from NJIT with a B.S. in Computer Science.<br />I'm currently looking for a position as a Software Engineer, or a Data Scientist.</p>
             </div>
             </div>
