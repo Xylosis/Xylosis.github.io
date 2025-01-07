@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactTypingEffect from "react-typing-effect";
 import img from "../imgs/fullbodyshot 3.png";
+import img2 from "../imgs/headshot 2.png";
 import { NavLink } from "react-router-dom";
 import "./home.css";
 
@@ -25,7 +26,8 @@ const Home = ({currPage, setCurrPage, setPrevPage, darkMode, setCubeVisible}) =>
           <div id="BiggerContainer">
             <div id="BigContainer">
             <div className="image-container">
-                <img src={img}></img>
+                <img src={img} className="desktop-image"></img>
+                <img src={img2} className="mobile-image"/>
             </div>
             <div className="text-container">
             <ReactTypingEffect
