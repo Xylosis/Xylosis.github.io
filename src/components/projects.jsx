@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {isMobile} from "react-device-detect";
 import img from "../imgs/biblicalai.png";
 import img2 from "../imgs/botsimg.png";
 import img3 from "../imgs/nyghtcrawler.png"
@@ -19,7 +20,10 @@ const Projects = ({darkMode}) => {
         { title: "Airline Satisfaction Predictor", description: "Within a group of fellow students, we explored what made passengers satisfied or dissatisfied with their flight through a number of features within a flgiht dataset. We then used Machine Learning to determine the most relevant features, as well as built mutliple different ML models, such as Random Forest Classifiers, Logistic Regression Models, and Neural Networks to determine if a customer would be satisfied with their flight given the relevant data, all of which did this with high accuracy.", skills: "Python, Machine Learning", image: img7 },
       ];
     
+      const [isImageFullscreen, setIsImageFullscreen] = useState(false);
       const [currentIndex, setCurrentIndex] = useState(0);
+      const [touchStartX, setTouchStartX] = useState(null);
+      const [touchEndX, setTouchEndX] = useState(null);
     
       const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -37,10 +41,44 @@ const Projects = ({darkMode}) => {
         }
       };
     
+      const handleTouchStart = (e) => {
+        setTouchStartX(e.touches[0].clientX); // Record the starting touch position
+      };
+    
+      const handleTouchMove = (e) => {
+        setTouchEndX(e.touches[0].clientX); // Update the current touch position
+      };
+    
+      const handleTouchEnd = () => {
+        if (!touchStartX || !touchEndX) return;
+    
+        const swipeDistance = touchStartX - touchEndX;
+    
+        // Define a threshold for swipe detection
+        const swipeThreshold = 50;
+    
+        if (swipeDistance > swipeThreshold) {
+          // Swipe left: Go to the next screen
+          handleNext();
+        } else if (swipeDistance < -swipeThreshold) {
+          // Swipe right: Go to the previous screen
+          handlePrev();
+        }
+    
+        // Reset touch positions
+        setTouchStartX(null);
+        setTouchEndX(null);
+      };
+
       const styles = darkMode ? {backgroundColor: "#444"} : {};
 
       return (
-        <div className="gallery-container" onWheel={handleScroll}>
+        <div className="gallery-container" 
+             onWheel={handleScroll}
+             onTouchStart={handleTouchStart}
+             onTouchMove={handleTouchMove}
+             onTouchEnd={handleTouchEnd}
+        >
           <div
             className="project-slider"
             style={{
@@ -52,7 +90,7 @@ const Projects = ({darkMode}) => {
                 <div>
                   <h1 style={darkMode ? {color: "white"} : null}>{`Project ${currentIndex+1}/${projects.length}`}</h1>
                 </div>
-                <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null}/>
+                <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => setIsImageFullscreen(true)}/>
                 <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
                 <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
                 <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
@@ -60,8 +98,8 @@ const Projects = ({darkMode}) => {
             ))}
           </div>
           <div className="gallery-controls">
-            <button onClick={handlePrev} className="control-button">Previous</button>
-            <button onClick={handleNext} className="control-button">Next</button>
+            <button onClick={handlePrev} className="control-button">{isMobile ? null :"Previous"}</button>
+            <button onClick={handleNext} className="control-button">{isMobile ? null :"Next"}</button>
           </div>
         </div>
       );

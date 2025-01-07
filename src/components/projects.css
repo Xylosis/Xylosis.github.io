@@ -25,7 +25,7 @@ html, body {
 .gallery-container {
     position: relative;
     width: 100%;
-    height: 80vh;
+    /* height: 80vh; */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -131,4 +131,67 @@ html, body {
     margin-right: 20px;
   }
   
+  @media (max-width: 768px) {
+    .project-card{
+      flex: 0 0 100%;
+    }
+
+    /* .gallery-controls{
+       position: fixed; 
+    } */
+
+    .control-button{
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .control-button:first-of-type{
+      margin-left: 2px;
+    }
+
+    .control-button:last-of-type {
+      margin-right: 2px;
+    }
+
+    .control-button:first-of-type:before{
+      content: "‹"; /* "‹"*/
+    }
+
+    .control-button:last-of-type:before {
+      content: '›';
+    }
+
+    .gallery-container{
+      overflow-y: auto;
+      min-height: 100vh; /* Full height of the viewport */
+      overflow: hidden;
+    }
+    
+
+    .project-card h1 {
+      font-size: 1rem;
+    }
   
+    .project-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .project-card img {
+      width: 60%; /* Reduce image size on mobile */
+      height: 35%;
+    }
+  
+    .project-card p {
+      font-size: 0.9rem;
+      max-width: 100%;
+      margin-top: 1rem;
+    }
+
+  }
+
+  @media (min-width: 769px) {
+    .gallery-container{
+      height: 80vh;
+    }
+  }

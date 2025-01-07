@@ -68,15 +68,16 @@
       transition: background-color 0.9s ease, transform 0.3s ease;
     }
     
+    /*
     .toggle-sidebar-button:hover {
-      background-color: #0056b3; /* Slightly darker blue on hover */
-      transform: translateY(-50%) translateX(0.2rem); /* Slight nudge to show interaction */
+      background-color: #0056b3; 
+      transform: translateY(-50%) translateX(0.2rem); 
     }
     
     .toggle-sidebar-button:active {
-      transform: translateY(-50%) translateX(0.1rem); /* Slight pressed effect */
+      transform: translateY(-50%) translateX(0.1rem); 
     }
-    
+    */
     .toggle-sidebar-button:focus {
       outline: none; /* Remove default focus outline */
       box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Accessible focus ring */
