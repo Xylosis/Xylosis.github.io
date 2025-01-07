@@ -118,11 +118,6 @@ html, body {
     transition: transform 0.2s ease, background-color 0.3s ease;
   }
   
-  .control-button:hover {
-    background-color: #007bff;
-    transform: scale(1.1);
-  }
-  
   .control-button:first-of-type {
     margin-left: 20px;
   }
@@ -144,6 +139,7 @@ html, body {
       font-size: 1.5rem;
       padding: 5px 10px;
       border-radius: 5px;
+      height: 5rem;
     }
 
     .control-button:first-of-type{
@@ -184,7 +180,7 @@ html, body {
   
     .project-card p {
       font-size: 0.9rem;
-      max-width: 100%;
+      /* max-width: 80%; */
       margin-top: 1rem;
     }
 
@@ -193,5 +189,10 @@ html, body {
   @media (min-width: 769px) {
     .gallery-container{
       height: 80vh;
+    }
+
+    .control-button:hover {
+      background-color: #007bff;
+      transform: scale(1.1);
     }
   }
