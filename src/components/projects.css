@@ -241,7 +241,7 @@ html, body {
     }
 
     .fullscreen-image-container .close-button {
-      border-radius: 50%;
+      border-radius: 1rem;
       background-color: rgba(194, 22, 22, 0.5);
       color: white !important;
       font-size: 2rem;

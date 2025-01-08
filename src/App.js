@@ -22,16 +22,16 @@ function App() {
   
 
   const [rotateX, setRotateX] = useState(() =>
-    localStorage.getItem("rotateX") || 0
+    sessionStorage.getItem("rotateX") || 0
   );
   const [rotateY, setRotateY] = useState(() =>
-    localStorage.getItem("rotateY") || 0
+    sessionStorage.getItem("rotateY") || 0
   );
   const [currPage, setCurrPage] = useState(() =>
-    localStorage.getItem("currPage") || "Home"
+    sessionStorage.getItem("currPage") || "Home"
   );
   const [prevPage, setPrevPage] = useState(() =>
-    localStorage.getItem("prevPage") || "Home"
+    sessionStorage.getItem("prevPage") || "Home"
   );
   const [darkMode, setDarkMode] = useState(() =>
     localStorage.getItem("darkMode") === "true" // Parse the stored boolean
@@ -39,11 +39,11 @@ function App() {
 
 
   useEffect(() => {
-    localStorage.setItem("rotateX", rotateX);
+    sessionStorage.setItem("rotateX", rotateX);
   }, [rotateX]);
 
   useEffect(() => {
-    localStorage.setItem("rotateY", rotateY);
+    sessionStorage.setItem("rotateY", rotateY);
   }, [rotateY]);
 
   useEffect( () => {
@@ -55,11 +55,11 @@ function App() {
       setCubeVisible(true);
     }
     setSubmittedForm(false);
-    localStorage.setItem("currPage", currPage);
+    sessionStorage.setItem("currPage", currPage);
   }, [currPage])
 
   useEffect(() => {
-    localStorage.setItem("prevPage", prevPage);
+    sessionStorage.setItem("prevPage", prevPage);
   }, [prevPage]);
 
   useEffect( () => {
