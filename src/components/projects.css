@@ -241,12 +241,18 @@ html, body {
     }
 
     .fullscreen-image-container .close-button {
-      height: 50px;
-      width: 50px;
       border-radius: 50%;
       background-color: rgba(194, 22, 22, 0.5);
       color: white !important;
       font-size: 2rem;
+    }
+
+    .close-button svg {
+      fill: white;
+    }
+
+    .close-button {
+      color: white !important; /* Ensure the color is white on mobile */
     }
 
   }
