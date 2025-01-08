@@ -15,15 +15,36 @@ import Research from './components/research';
 
 function App() {
   const [cubeVisible, setCubeVisible] = useState(false);
-  const [currPage, setCurrPage] = useState("Home");
   const [initialEntry, setInitialEntry] = useState(true);
   const [isFading, setIsFading] = useState(true);
-  const [prevPage, setPrevPage] = useState("Home");
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
   const [submittedForm, setSubmittedForm] = useState(false);
   const [navIsOpen, setNavIsOpen] = useState(false);
+  
+
+  const [rotateX, setRotateX] = useState(() =>
+    localStorage.getItem("rotateX") || 0
+  );
+  const [rotateY, setRotateY] = useState(() =>
+    localStorage.getItem("rotateY") || 0
+  );
+  const [currPage, setCurrPage] = useState(() =>
+    localStorage.getItem("currPage") || "Home"
+  );
+  const [prevPage, setPrevPage] = useState(() =>
+    localStorage.getItem("prevPage") || "Home"
+  );
+  const [darkMode, setDarkMode] = useState(() =>
+    localStorage.getItem("darkMode") === "true" // Parse the stored boolean
+  );
+
+
+  useEffect(() => {
+    localStorage.setItem("rotateX", rotateX);
+  }, [rotateX]);
+
+  useEffect(() => {
+    localStorage.setItem("rotateY", rotateY);
+  }, [rotateY]);
 
   useEffect( () => {
     if(initialEntry) {
@@ -34,7 +55,12 @@ function App() {
       setCubeVisible(true);
     }
     setSubmittedForm(false);
+    localStorage.setItem("currPage", currPage);
   }, [currPage])
+
+  useEffect(() => {
+    localStorage.setItem("prevPage", prevPage);
+  }, [prevPage]);
 
   useEffect( () => {
     if(darkMode) {
@@ -44,6 +70,7 @@ function App() {
       document.body.style.backgroundColor = '#dddddd';
       document.body.style.color = 'black';
     }
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode])
 
   return (
