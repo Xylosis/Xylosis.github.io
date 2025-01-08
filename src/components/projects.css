@@ -60,7 +60,7 @@ html, body {
     font-size: 1.5rem;
     color: #333; /* Default dark text */
     z-index: 1; /* Ensure it stays on top of the image if necessary */
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   
   .project-card img {
@@ -156,9 +156,10 @@ html, body {
 
   .project-link {
     text-decoration: none;
+    margin: 1rem 0;
     border: 1px solid black;
     border-radius: 1rem;
-    padding: 5px 8px;
+    padding: 5px 1rem;
     background-color: rgba(59, 54, 54, 0.7);
     color: rgb(255, 255, 255);
     transition: background-color 0.7s ease, color 0.6s ease, transform 0.5s ease;
@@ -263,6 +264,10 @@ html, body {
     .fullscreen-image-container .close-button:hover {
       color: #007bff;
       transition: color 0.2s ease-in-out;
+    }
+
+    .project-link {
+      padding: 5px 2rem;
     }
 
     /* .project-card img:hover {
