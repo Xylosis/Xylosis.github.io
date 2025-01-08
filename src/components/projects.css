@@ -72,12 +72,6 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.7s ease;
   }
-  
-  .project-card img:hover {
-    width: 45%;
-    height: 70%;
-    margin-bottom: 40px;
-  }
 
   .project-card h2 {
     font-size: 2rem;
@@ -194,5 +188,11 @@ html, body {
     .control-button:hover {
       background-color: #007bff;
       transform: scale(1.1);
+    }
+
+    .project-card img:hover {
+      width: 45%;
+      height: 70%;
+      margin-bottom: 40px;
     }
   }
