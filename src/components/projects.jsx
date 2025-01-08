@@ -85,17 +85,22 @@ const Projects = ({darkMode}) => {
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
           >
-            {projects.map((project, index) => (
-              <div className="project-card" style={styles} key={index}>
-                <div>
-                  <h1 style={darkMode ? {color: "white"} : null}>{`Project ${currentIndex+1}/${projects.length}`}</h1>
+            {!isImageFullscreen ? 
+              projects.map((project, index) => (
+                <div className="project-card" style={styles} key={index}>
+                  <div>
+                    <h1 className="text" style={darkMode ? {color: "white"} : null}>{`Project ${currentIndex+1}/${projects.length}`}</h1>
+                  </div>
+                  <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => /*isMobile &&*/ {setIsImageFullscreen(true); console.log(currentIndex);}}/>
+                  <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
+                  <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
+                  <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
                 </div>
-                <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => setIsImageFullscreen(true)}/>
-                <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
-                <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
-                <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
+            )): 
+              <div className="image-modal" onClick={() => setIsImageFullscreen(false)}>
+                <img src={projects[currentIndex].image} alt={projects[currentIndex].title} />
               </div>
-            ))}
+            }
           </div>
           <div className="gallery-controls">
             <button onClick={handlePrev} className="control-button">{isMobile ? null :"Previous"}</button>
@@ -106,3 +111,7 @@ const Projects = ({darkMode}) => {
 };
 
 export default Projects;
+
+{/* <div className="image-modal" onClick={() => setIsImageFullscreen(false)}>
+<img src={project.image} alt={project.title} />
+</div>  */}
