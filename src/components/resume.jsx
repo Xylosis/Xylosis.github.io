@@ -7,7 +7,7 @@ const Resume = () => {
         <div>
                 <div style={{ height: '100vh' }}>
                     <iframe
-                        src="/Andrew_Resume-42.pdf"
+                        src="/Andrew__Dickman__Resume.pdf"
                         width="100%"
                         height="100%"
                         style={{ border: 'none' }}

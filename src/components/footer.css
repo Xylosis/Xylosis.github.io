@@ -55,12 +55,18 @@
   
   .footer {
     margin-top: auto; /* Push footer to the bottom if content is short */
+    transition: background-color 0.7s ease;
   }
   
   .footer-dark {
     background-color: #1f2225 !important;
     color: whitesmoke;
     transition: color 0.5s ease;
+    transition: background-color 0.7s ease;
+  }
+
+  .footer-dark-links {
+    transition: background-color 0.7s ease-in-out;
   }
 
   .footer-dark-links:hover {
