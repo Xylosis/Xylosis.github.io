@@ -144,8 +144,6 @@ html, body {
 
   .fullscreen-image-container .close-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
     background: none;
     color: white;
     border: none;
@@ -245,6 +243,10 @@ html, body {
       width: 45px;
       border-radius: 50%;
       background-color: rgba(194, 22, 22, 0.5);
+      color: white;
+    }
+
+    .close-button{
       color: white;
     }
 

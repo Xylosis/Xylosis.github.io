@@ -120,7 +120,7 @@ const Projects = ({darkMode}) => {
           {isImageFullscreen ? 
             <div className="fullscreen-image-container">
                 <img src={projects[currentIndex].image} alt={projects[currentIndex].title} style={darkMode ? {backgroundColor: "#333"} : null} className="fullscreen-image"/>
-                <button className="close-button" onClick={closeFullscreen}>✖</button>
+                <button className="close-button" onClick={closeFullscreen} style={{color: "white"}}>✖</button>
             </div> : null
           }
         </div>
