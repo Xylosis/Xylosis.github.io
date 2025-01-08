@@ -23,7 +23,7 @@
     display: flex;
     gap: 1.5rem;
   }
-  
+
   /* Link styling */
   .navbar-links a {
     color: #bbb;
@@ -121,6 +121,16 @@
     transition: backgroundColor 0.6s ease;
   }
 
-  .collapsed {
+  .navbar-toggler {
     background-color: white;
+  }
+
+  @media (max-width: 768px) {
+    .activePage {
+      display: block;
+    }
+
+    .nav-link {
+      margin-left: 0;
+    }
   }
