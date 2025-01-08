@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import './about.css'
 
@@ -75,6 +75,7 @@ const About = ({darkMode, currPage, setCurrPage, setPrevPage}) => {
                             onClick={() => {
                                 setPrevPage(currPage);
                                 setCurrPage("Projects");
+                                document.getElementsByClassName("navbar-toggler")[0].click();
                             }}
                             className={`ToProjectButton ${
                                 darkMode ? "dark" : null
