@@ -5,7 +5,7 @@ import img2 from "../imgs/headshot 2.png";
 import { NavLink } from "react-router-dom";
 import "./home.css";
 
-const Home = ({currPage, setCurrPage, setPrevPage, darkMode, setCubeVisible}) => {
+const Home = ({currPage, setCurrPage, setPrevPage, darkMode, navIsOpen}) => {
     const [classes, setClasses] = useState("aboutlinkfromhome")
 
     // const styles = {
@@ -79,7 +79,7 @@ const Home = ({currPage, setCurrPage, setPrevPage, darkMode, setCubeVisible}) =>
                 <p className={"text subtitle"}>I'm a recent graduate from NJIT with a B.S. in Computer Science.<br />I'm currently looking for a position as a Software Engineer, or a Data Scientist.</p>
             </div>
             </div>
-            <NavLink as={NavLink} to={"/about"} onClick={() => {setPrevPage(currPage); setCurrPage("About"); document.getElementsByClassName("navbar-toggler")[0].click();}} className={classes}> Learn More About Me! </NavLink>
+            <NavLink as={NavLink} to={"/about"} onClick={() => {setPrevPage(currPage); setCurrPage("About"); const v = navIsOpen ? document.getElementsByClassName("navbar-toggler")[0].click() : null;}} className={classes}> Learn More About Me! </NavLink>
           </div>
         </div>
     );

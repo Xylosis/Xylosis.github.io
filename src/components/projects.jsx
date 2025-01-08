@@ -34,6 +34,7 @@ const Projects = ({darkMode}) => {
       };
     
       const handleScroll = (e) => {
+        if(isImageFullscreen) { return; }
         if (e.deltaY > 0) {
           handleNext();
         } else {
@@ -50,7 +51,7 @@ const Projects = ({darkMode}) => {
       };
     
       const handleTouchEnd = () => {
-        if (!touchStartX || !touchEndX) return;
+        if (!touchStartX || !touchEndX || isImageFullscreen) return;
     
         const swipeDistance = touchStartX - touchEndX;
     
@@ -70,6 +71,15 @@ const Projects = ({darkMode}) => {
         setTouchEndX(null);
       };
 
+      function closeFullscreen() {
+        const container = document.querySelector('.fullscreen-image-container');
+        if (container) {
+          //container.style.display = 'none'; // Hide the modal
+          setIsImageFullscreen(false);
+          document.body.classList.remove('no-scroll');
+        }
+      }
+
       const styles = darkMode ? {backgroundColor: "#444"} : {};
 
       return (
@@ -85,27 +95,29 @@ const Projects = ({darkMode}) => {
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
           >
-            {!isImageFullscreen ? 
-              projects.map((project, index) => (
+              {projects.map((project, index) => (
                 <div className="project-card" style={styles} key={index}>
                   <div>
                     <h1 className="text" style={darkMode ? {color: "white"} : null}>{`Project ${currentIndex+1}/${projects.length}`}</h1>
                   </div>
-                  <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => /*isMobile &&*/ {setIsImageFullscreen(true); console.log(currentIndex);}}/>
+                  <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => /*isMobile &&*/ {setIsImageFullscreen(true); document.body.classList.add('no-scroll');}}/>
                   <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
                   <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
                   <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
                 </div>
-            )): 
-              <div className="image-modal" onClick={() => setIsImageFullscreen(false)}>
-                <img src={projects[currentIndex].image} alt={projects[currentIndex].title} />
-              </div>
-            }
+                ))
+              }
           </div>
           <div className="gallery-controls">
             <button onClick={handlePrev} className="control-button">{isMobile ? null :"Previous"}</button>
             <button onClick={handleNext} className="control-button">{isMobile ? null :"Next"}</button>
           </div>
+          {isImageFullscreen ? 
+            <div className="fullscreen-image-container">
+                <img src={projects[currentIndex].image} alt={projects[currentIndex].title} style={darkMode ? {backgroundColor: "#333"} : null} className="fullscreen-image"/>
+                <button className="close-button" onClick={closeFullscreen}>✖</button>
+            </div> : null
+          }
         </div>
       );
 };

@@ -23,6 +23,7 @@ function App() {
   const [rotateY, setRotateY] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
   const [submittedForm, setSubmittedForm] = useState(false);
+  const [navIsOpen, setNavIsOpen] = useState(false);
 
   useEffect( () => {
     if(initialEntry) {
@@ -47,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <SiteNavBar currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <SiteNavBar currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setDarkMode={setDarkMode} setNavIsOpen={setNavIsOpen}/>
       {cubeVisible && <RotatingCube 
                         currPage={currPage} 
                         setCubeVisible={setCubeVisible}
@@ -67,8 +68,8 @@ function App() {
 
         <Routes>
           <Route path='/' element={cubeVisible ? null : <Home currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setCubeVisible={setCubeVisible}/>}/>
-          <Route path='/home' element={cubeVisible ? null : <Home currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} setCubeVisible={setCubeVisible}/>}></Route>
-          <Route path='/about' element={cubeVisible ? null : <About darkMode={darkMode} currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage}/>} />
+          <Route path='/home' element={cubeVisible ? null : <Home currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} darkMode={darkMode} navIsOpen={navIsOpen}/>}></Route>
+          <Route path='/about' element={cubeVisible ? null : <About darkMode={darkMode} currPage={currPage} setCurrPage={setCurrPage} setPrevPage={setPrevPage} navIsOpen={navIsOpen}/>} />
           <Route path='/resume' element={cubeVisible ? null : <Resume />} />
           <Route path='/projects' element={cubeVisible ? null : <Projects darkMode={darkMode}/>} />
           <Route path='/research' element={cubeVisible ? null : <Research darkMode={darkMode} />} />

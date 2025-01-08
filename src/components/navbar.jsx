@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "react-bootstrap/Nav";
@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 import './navbar.css';
 
-const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode}) => {
+const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode, setNavIsOpen}) => {
 
     const [expanded, setExpanded] = useState(false);
 
@@ -15,6 +15,10 @@ const SiteNavBar = ({currPage, setCurrPage, setPrevPage, darkMode, setDarkMode})
       const navButton = document.getElementsByClassName("navbar-toggler")[0];
       navButton.click();
     };
+
+    useEffect(() => {
+      setNavIsOpen(expanded);
+    }, [expanded]);
 
     const styles = {
       navBarItems : {

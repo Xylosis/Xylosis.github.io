@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import './about.css'
 
-const About = ({darkMode, currPage, setCurrPage, setPrevPage}) => {
+const About = ({darkMode, currPage, setCurrPage, setPrevPage, navIsOpen}) => {
     const [activeTab, setActiveTab] = useState("Professional Life");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -75,7 +75,7 @@ const About = ({darkMode, currPage, setCurrPage, setPrevPage}) => {
                             onClick={() => {
                                 setPrevPage(currPage);
                                 setCurrPage("Projects");
-                                document.getElementsByClassName("navbar-toggler")[0].click();
+                                const v = navIsOpen ? document.getElementsByClassName("navbar-toggler")[0].click() : null;
                             }}
                             className={`ToProjectButton ${
                                 darkMode ? "dark" : null
