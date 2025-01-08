@@ -240,6 +240,14 @@ html, body {
       margin-top: 1rem;
     }
 
+    .fullscreen-image-container .close-button {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      background-color: rgba(194, 22, 22, 0.5);
+      color: white;
+    }
+
   }
 
   @media (min-width: 769px) {
