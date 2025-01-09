@@ -1,6 +1,11 @@
+html, body {
+  /* height: 100%; Ensure the body spans full height */
+  margin: 0;
+}
+
 /* Footer Container */
 .footer {
-    position: relative; /* Ensures it's styled properly in the flow */
+    position: sticky; /* Ensures it's styled properly in the flow */
     bottom: 0;
     width: 100%;
     background-color: #fff; /* Dark background */
@@ -42,10 +47,6 @@
   }
   
   /* Stick Footer to Bottom */
-  html, body {
-    height: 100%; /* Ensure the body spans full height */
-    margin: 0;
-  }
   
   #root {
     display: flex;
