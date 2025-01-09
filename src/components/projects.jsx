@@ -103,7 +103,7 @@ const Projects = ({darkMode}) => {
                   <img src={project.image} alt={project.title} style={darkMode ? {backgroundColor: "#333"} : null} onClick={() => /*isMobile &&*/ {setIsImageFullscreen(true); document.body.classList.add('no-scroll');}}/>
                   <h2 style={darkMode ? {color: "white"} : null}>{project.title}</h2>
                   <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>{project.description}</p>
-                  <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}>Skills Learned: {project.skills}</p>
+                  <p style={darkMode ? {color: "rgba(207, 206, 206, 0.863)"} : null}><b>Skills Learned: {project.skills}</b></p>
                   {project.link ? 
                     <a href={project.link} className={`project-link ${darkMode ? "dark" : ""}`}>Preview</a> 
                     :
